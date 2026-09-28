@@ -43,7 +43,7 @@ If the antivirus analyzed every single data packet while you were driving, it wo
 🛑 Micro-stuttering during your races
 
 📂 3. Why the Entire D:\ Drive is Excluded.
-In the screenshot, you can also see that the whole D:\ folder is listed.
+You can also see that the whole D:\ folder is listed.
 Sim-racers often do this to prevent Microsoft Defender from constantly scanning heavy game files installed on a secondary HDD or SSD.
 This significantly improves overall loading times and game fluidity!
 
