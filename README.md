@@ -1,4 +1,3 @@
-# ACEVO-LookAhead-Steering-Controller
 LookAhead Steering Controller is a lightweight, standalone suite that converts your steering wheel rotation into toward the inside of a corner, without needing to install or run OpenTrack.
 
 <img width="1357" height="1386" alt="ACEVO LookAhead Steering Controller v0 9 0 0" src="https://github.com/user-attachments/assets/c19829b3-1904-4deb-af73-ea27cf1e47c3" />
