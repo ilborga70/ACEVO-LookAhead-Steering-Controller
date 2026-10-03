@@ -1,12 +1,12 @@
 LookAhead Steering Controller is a lightweight, standalone suite that converts your steering wheel rotation into toward the inside of a corner, without needing to install or run OpenTrack.
 
-<img width="1357" height="1386" alt="ACEVO LookAhead Steering Controller v0 9 0 0" src="https://github.com/user-attachments/assets/c19829b3-1904-4deb-af73-ea27cf1e47c3" />
-
 🇬🇧 What's New in Version 0.9.0.0
 - Dynamic Apex Roll Tilt: Added natural camera roll/tilt toward the corner apex when steering.
 - UI Controls: Added an ON/OFF toggle for the roll tilt along with an intensity percentage adjustment slider/spinbox.
 - Complete UDP Telemetry: Real-time display of both Yaw and Roll values sent to OpenTrack at 60Hz.
 - JSON Configuration Save: Integrated automatic saving and loading for the Roll Tilt settings in the JSON configuration file.
+
+<img width="1357" height="1386" alt="ACEVO LookAhead Steering Controller v0 9 0 0" src="https://github.com/user-attachments/assets/c19829b3-1904-4deb-af73-ea27cf1e47c3" />
 
 🚀 Quick Installation (First Time Only)
 1. Download the mod's .zip archive.
