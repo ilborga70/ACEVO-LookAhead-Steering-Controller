@@ -15,7 +15,7 @@ LookAhead Steering Controller is a lightweight, standalone suite that converts y
 `...\SteamLibrary\steamapps\common\Assetto Corsa EVO\`
 Note: The manual build will add the mod (`LookAhead Steering Controller.exe` and `dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`).
 
-🛠️ Step-by-Step Setup Guide Without Mod (`LookAhead Steering Controller.exe` and `dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`)
+🛠️ Step-by-Step Setup Guide Without Mod (dinput8.dll and AssettoCorsaEvoHeadTracking.asi)
 
 0. **Download OpenTrack:**  
    Download and install OpenTrack from the official release page:  
