@@ -13,17 +13,28 @@ LookAhead Steering Controller is a lightweight, standalone suite that converts y
 1. Download the mod's .zip archive.
 2. Extract ALL the contents of the ZIP directly into the game's root folder:
 `...\SteamLibrary\steamapps\common\Assetto Corsa EVO\`
-
 Note: The manual build will add the mod (`LookAhead Steering Controller.exe` and `dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`).
 
-🎮 How to Use
-1. In the game folder, run `LookAhead Steering Controller.exe`.
-2. Select your device/steering wheel from the drop-down menu.
-3. Adjust the desired sensitivity (recommended starting at 5% for natural movement) and click Apply Real-Time.
-4. Leave the program open and launch Assetto Corsa EVO from Steam.
-5. Get in the car and switch to Cockpit/Helmet View.
-6. Set the actual degrees of the car in use in your driving controller, for example, Lancia Delta (720°).
-7. Also set the actual degrees of the car in use in the LookAhead Steering Controller program, for example, Lancia Delta (720°).
+🛠️ Step-by-Step Setup Guide Without Mod (`LookAhead Steering Controller.exe` and `dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`)
+
+0. **Download OpenTrack:**  
+   Download and install OpenTrack from the official release page:  
+   👉 [OpenTrack Releases](https://github.com/opentrack/opentrack)
+
+1. **Configure OpenTrack (Universal Output Matrix):**
+   * Open OpenTrack and set **Input** to *UDP over network* (Port `4242`).
+   * Set **Output** to *freetrack 2.0 Enhanced*.
+   * Go to **Options → Output** and configure the matrix as follows:
+     * **Yaw:** Source ➡️ `Yaw`
+     * **Pitch:** Source ➡️ `Roll`
+     * **Roll:** Source ➡️ `Roll` + Enable **Post-Invert**
+   * Click **Start**.
+
+2. **Configure LookAhead Steering Controller:**
+   * Extract the ZIP package and run `LookAhead Steering Controller.exe` as Administrator.
+   * Set **Wheel Degrees (Lock-to-Lock)** to `1800°` inside the utility to establish a maximum linear baseline.
+   * Adjust your physical steering lock degrees exclusively within your wheelbase driver software (e.g., Fanatec Fanalab, Simucube True Drive, Thrustmaster Control Panel).
+   * Check the built-in diagnostic panel (**System Process Status**) to verify real-time connections for your wheel, OpenTrack, and the simulator.
 
 🛠️ Technical Features
 Direct UDP Protocol: Sends data directly to the game engine (zero latency).
