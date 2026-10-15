@@ -1,74 +1,108 @@
-# ACEVO-LookAhead-Steering-Controller
-LookAhead Steering Controller is a lightweight, standalone suite that converts your steering wheel rotation into toward the inside of a corner, without needing to install or run OpenTrack.
+# 🏎️ AC EVO LookAhead Steering Controller
 
-🇬🇧 What's New in Version 0.9.0.0
-- Dynamic Apex Roll Tilt: Added natural camera roll/tilt toward the corner apex when steering.
-- UI Controls: Added an ON/OFF toggle for the roll tilt along with an intensity percentage adjustment slider/spinbox.
-- Complete UDP Telemetry: Real-time display of both Yaw and Roll values sent to OpenTrack at 60Hz.
-- JSON Configuration Save: Integrated automatic saving and loading for the Roll Tilt settings in the JSON configuration file.
+> **Universal Telemetric Camera Bridge for Assetto Corsa EVO (AC EVO)**  
+> Developed by **ilborga70**
 
-<img width="1357" height="1386" alt="ACEVO LookAhead Steering Controller v0 9 0 0" src="https://github.com/user-attachments/assets/c19829b3-1904-4deb-af73-ea27cf1e47c3" />
+A lightweight, high-frequency (60Hz UDP) telemetry bridge designed to simulate realistic head and camera movement in Assetto Corsa EVO without requiring VR headsets or head-tracking hardware.
 
-🚀 Quick Installation (First Time Only)
-1. Download the mod's .zip archive.
-2. Extract ALL the contents of the ZIP directly into the game's root folder:
-`...\SteamLibrary\steamapps\common\Assetto Corsa EVO\`
-Note: The manual build will add the mod (`LookAhead Steering Controller.exe` and `dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`).
+---
 
-🛠️ Step-by-Step Setup Guide Without Mod (dinput8.dll and AssettoCorsaEvoHeadTracking.asi)
+## 🆕 What's New in Version 0.9.0.0
 
-0. **Download OpenTrack:**  
-   Download and install OpenTrack from the official release page:  
-   👉 [OpenTrack Releases](https://github.com/opentrack/opentrack)
+- **Dynamic Apex Roll Tilt:** Added natural camera roll/tilt toward the corner apex when steering for enhanced immersion during high-speed cornering and drifting.
+- **UI Controls:** Added an **ON/OFF toggle** for the Roll Tilt feature, along with an intensity percentage adjustment slider/spinbox.
+- **Complete UDP Telemetry:** Real-time visual display in the GUI for both **Yaw** and **Roll** values sent directly to OpenTrack at 60Hz.
+- **JSON Configuration Persistence:** Integrated automatic saving and loading for the Roll Tilt settings into the project's `.json` configuration file.
 
-1. **Configure OpenTrack (Universal Output Matrix):**
-   * Open OpenTrack and set **Input** to *UDP over network* (Port `4242`).
-   * Set **Output** to *freetrack 2.0 Enhanced*.
-   * Go to **Options → Output** and configure the matrix as follows:
-     * **Yaw:** Source ➡️ `Yaw`
-     * **Pitch:** Source ➡️ `Roll`
-     * **Roll:** Source ➡️ `Roll` + Enable **Post-Invert**
-   * Click **Start**.
+---
 
-2. **Configure LookAhead Steering Controller:**
-   * Extract the ZIP package and run `LookAhead Steering Controller.exe` as Administrator.
-   * Set **Wheel Degrees (Lock-to-Lock)** to `1800°` inside the utility to establish a maximum linear baseline.
-   * Adjust your physical steering lock degrees exclusively within your wheelbase driver software (e.g., Fanatec Fanalab, Simucube True Drive, Thrustmaster Control Panel).
-   * Check the built-in diagnostic panel (**System Process Status**) to verify real-time connections for your wheel, OpenTrack, and the simulator.
+## 🚀 Quick Installation (First Time Only)
 
-🛠️ Technical Features
-Direct UDP Protocol: Sends data directly to the game engine (zero latency).
-No external programs: OpenTrack is not necessary.
-Natural Movement Filter: Stabilizes the signal and avoids jerkiness during sudden steering inputs.
+1. Download the mod's `.zip` archive.
+2. Extract **ALL** the contents of the ZIP directly into the game's root folder:
+   ```text
+   ...\SteamLibrary\steamapps\common\Assetto Corsa EVO\
+   ```
+   > 💡 **Note:** The manual build will add the mod (`LookAhead Steering Controller.exe`, `dinput8.dll`, and `AssettoCorsaEvoHeadTracking.asi`).
 
-🎮 Windows Security & SimRacing: Why exclude the LookAhead Steering Controller? 🏎️💨
-Have you noticed this file in the Windows Defender exclusions?
-Let’s break down why adding lookahead steering controller.exe is essential for your setup! 👇
+---
 
-🛡️ 1. Preventing False Positives (Unjustified Blocks).
-This program is a third-party utility designed to calculate wheel movements and camera angles for racing simulators.
-Because it reads hardware data and shares it directly with other software (like OpenTrack), Windows Defender might mistake this behavior for malicious activity (like a keylogger).
-Adding it to your exclusions stops Windows from blocking or deleting it by mistake!
+## 🛠️ Step-by-Step Setup Guide Without Mod (`dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`)
 
-⚡ 2. Eliminating Micro-Stuttering & Input Lag.
-Windows Antivirus scans files in real-time.
-As shown in the software window, this controller transmits data at a very high frequency (60Hz — 60 times per second).
-If the antivirus analyzed every single data packet while you were driving, it would cause:
+### 0. Download & Install Prerequisites
+- Download and install **OpenTrack**:  
+  👉 [OpenTrack Releases (GitHub)](https://github.com/opentrack/opentrack/releases)
 
-📈 Abnormal CPU spikes
-⏱️ Delayed inputs (input lag)
-🛑 Micro-stuttering during your races
+---
 
-📂 3. Why the Entire D:\ Drive is Excluded.
-You can also see that the whole D:\ folder is listed.
-Sim-racers often do this to prevent Microsoft Defender from constantly scanning heavy game files installed on a secondary HDD or SSD.
-This significantly improves overall loading times and game fluidity!
+### 1. Configure LookAhead Steering Controller
+1. Extract the `LookAhead Steering Controller` archive and launch `LookAhead Steering Controller.exe` as **Administrator**.
+2. Set **Wheel Degrees (Lock-to-Lock)** to `1800°`.  
+   > 💡 **Technical Note:** Keeping `1800°` as a fixed baseline in the software provides a full 5-rotation dynamic scale (`1800 ÷ 2 = 900°`, `1800 ÷ 3.33 = 540°`, `1800 ÷ 5 = 360°`, `1800 ÷ 10 = 180°`), guaranteeing 100% linear telemetry without rounding errors.  
+3. **Important:** Adjust real physical steering lock degrees **exclusively within your wheelbase software** (e.g., Fanatec Fanalab, Simucube True Drive, Thrustmaster Control Panel) to match the car's specifications.
 
-🔬 Is this file 100% safe?
-Yes! If you are worried about security, the file has been fully analyzed on Jotti's malware scan.
-The results show 0/13 scanners reporting malware, meaning top antiviruses like Kaspersky, BitDefender, and Avast found absolutely nothing.
+---
 
-🔗 Check the full safety report here: https://virusscan.jotti.org/it-IT/filescanjob/g84ynyzizw
+### 2. OpenTrack Universal Output Mapping
+Open OpenTrack and set **Input** to `UDP over network` (Port `4242`) and **Output** to `freetrack 2.0 Enhanced`.
 
-📜 Credits & Licenses
-LookAhead Steering Controller by `ilborga70`
+#### A. Options → Output Matrix
+Configure the mapping matrix so a single profile works universally across both **LHD** and **RHD** vehicles:
+
+| Destination | Source | Pre-invert | Post-invert |
+| :--- | :--- | :---: | :---: |
+| **Yaw** | `Yaw` | ☐ | ☐ |
+| **Pitch** | `Roll` | ☐ | ☐ |
+| **Roll** | `Roll` | ☐ | ☐ |
+| **X** | `Disabled` | ☐ | ☐ |
+| **Y** | `Disabled` | ☐ | ☐ |
+| **Z** | `Disabled` | ☐ | ☐ |
+
+#### B. Options → Filter Setup
+Select the **Accela + Hamilton Filter** and set the parameters as follows:
+- **Rotation filtering (Yaw, Pitch, Roll):**
+  - **Smoothing:** `1.5°`
+  - **Deadzone:** `0.03°`
+- **Position filtering (X, Y, Z):**
+  - **Smoothing:** `1mm`
+  - **Deadzone:** `0.1mm`
+- **Rotation Smoothing (Zoomed):**
+  - **Max Added:** `0°`
+  - **Max Z:** `9.6mm`
+
+---
+
+### 3. Run & Drive
+1. Click **Start** inside OpenTrack.
+2. Verify the status in the LookAhead Steering Controller's **System Process Status** diagnostic panel.
+3. Launch **Assetto Corsa EVO** and scendi in pista! 🏎️💨
+
+---
+
+## 🎮 Windows Security & SimRacing: Why exclude the LookAhead Steering Controller? 🏎️💨
+
+Have you noticed this file in the Windows Defender exclusions? Let’s break down why adding `LookAhead Steering Controller.exe` is essential for your setup! 👇
+
+### 🛡️ 1. Preventing False Positives (Unjustified Blocks)
+This program is a third-party utility designed to calculate wheel movements and camera angles for racing simulators. Because it reads hardware data and shares it directly with other software (like OpenTrack), Windows Defender might mistake this behavior for malicious activity (like a keylogger). Adding it to your exclusions stops Windows from blocking or deleting it by mistake!
+
+### ⚡ 2. Eliminating Micro-Stuttering & Input Lag
+Windows Antivirus scans files in real-time. As shown in the software window, this controller transmits data at a very high frequency (**60Hz — 60 times per second**). If the antivirus analyzed every single data packet while you were driving, it would cause:
+- 📈 **Abnormal CPU spikes**
+- ⏱️ **Delayed inputs (input lag)**
+- 🛑 **Micro-stuttering during your races**
+
+### 📂 3. Why the Entire D:\ Drive is Excluded
+You can also see that the whole `D:\` folder is listed. Sim-racers often do this to prevent Microsoft Defender from constantly scanning heavy game files installed on a secondary HDD or SSD. This significantly improves overall loading times and game fluidity!
+
+---
+
+## 🔬 Is this file 100% safe?
+
+**Yes!** If you are worried about security, the file has been fully analyzed on Jotti's malware scan. The results show **0/13 scanners** reporting malware, meaning top antiviruses like Kaspersky, BitDefender, and Avast found absolutely nothing.
+
+🔗 **Check the full safety report here:** [Jotti's Malware Scan Report](https://virusscan.jotti.org/it-IT/filescanjob/g84ynyzizw)
+
+---
+
+👨‍💻 **Created by ilborga70** • [Pro-Sim Utilities Hub](https://github.com/ilborga70)
