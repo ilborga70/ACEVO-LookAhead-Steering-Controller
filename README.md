@@ -7,13 +7,24 @@ A lightweight, high-frequency (60Hz UDP) telemetry bridge designed to simulate r
 
 ---
 
-## 🆕 What's New in Version 0.9.0.0
+## 🆕 What's New in Version 1.0.0.0
+
+### ✨ New Features
+- **Pitch Axis Integration:** Added full support for dynamic control of the *Pitch* axis, allowing you to vertically tilt the camera view based on the steering angle.
+- **Dedicated GUI Controls:** Introduced a new `Checkbox` and `NumericUpDown` on the right-hand column to enable/disable and finely adjust the intensity of the *Pitch Tilt*.
+- **Extended UDP Telemetry:** The monitoring label at the bottom right now displays the three active axes (**Yaw**, **Pitch**, and **Roll**) in real-time.
+
+### 🛠️ Improvements & Optimizations
+- **OpenTrack UDP Protocol:** Updated the 48-byte binary buffer to correctly map *Pitch* at offset `8..15`, alongside *Yaw* (`24..31`) and *Roll* (`40..47`).
+- **Configuration Persistence (`config.json`):** Updated save, load, import, and export functions to include `EnablePitchTilt` and `PitchTiltSens` parameters.
+- **Internationalization (i18n):** Added complete translation strings (Italian / English) and related descriptive tooltips for the new controls.
+
+## 🆕 What's in Version 0.9.0.0
 
 - **Dynamic Apex Roll Tilt:** Added natural camera roll/tilt toward the corner apex when steering for enhanced immersion during high-speed cornering and drifting.
 - **UI Controls:** Added an **ON/OFF toggle** for the Roll Tilt feature, along with an intensity percentage adjustment slider/spinbox.
 - **Complete UDP Telemetry:** Real-time visual display in the GUI for both **Yaw** and **Roll** values sent directly to OpenTrack at 60Hz.
 - **JSON Configuration Persistence:** Integrated automatic saving and loading for the Roll Tilt settings into the project's `.json` configuration file.
-
 ---
 
 ## 🚀 Quick Installation (First Time Only)
@@ -37,9 +48,10 @@ A lightweight, high-frequency (60Hz UDP) telemetry bridge designed to simulate r
 
 ### 1. Configure LookAhead Steering Controller
 1. Extract the `LookAhead Steering Controller` archive and launch `LookAhead Steering Controller.exe` as **Administrator**.
-2. Set **Wheel Degrees (Lock-to-Lock)** to `1800°`.  
-   > 💡 **Technical Note:** Keeping `1800°` as a fixed baseline in the software provides a full 5-rotation dynamic scale (`1800 ÷ 2 = 900°`, `1800 ÷ 3.33 = 540°`, `1800 ÷ 5 = 360°`, `1800 ÷ 10 = 180°`), guaranteeing 100% linear telemetry without rounding errors.  
-3. **Important:** Adjust real physical steering lock degrees **exclusively within your wheelbase software** (e.g., Fanatec Fanalab, Simucube True Drive, Thrustmaster Control Panel) to match the car's specifications.
+2. **Set Steering Degrees:** Enter the exact steering lock value (degrees of rotation) required by the car in-game into the **LookAhead Steering Controller**.
+3. **Match Wheelbase Settings:** Set the exact same degree value directly in your physical wheelbase software (e.g., Fanatec Fanalab, Simucube True Drive, Thrustmaster Control Panel, Moza Pit House).
+
+> 💡 **Important:** Ensure that the steering lock degrees set in the **LookAhead Steering Controller**, in the **in-game car setup**, and in your **physical wheelbase software** are 100% identical for optimal telemetric precision and response.
 
 ---
 
@@ -49,26 +61,7 @@ Open OpenTrack and set **Input** to `UDP over network` (Port `4242`) and **Outpu
 #### A. Options → Output Matrix
 Configure the mapping matrix so a single profile works universally across both **LHD** and **RHD** vehicles:
 
-| Destination | Source | Pre-invert | Post-invert |
-| :--- | :--- | :---: | :---: |
-| **Yaw** | `Yaw` | ☐ | ☐ |
-| **Pitch** | `Roll` | ☐ | ☐ |
-| **Roll** | `Roll` | ☐ | ☐ |
-| **X** | `Disabled` | ☐ | ☐ |
-| **Y** | `Disabled` | ☐ | ☐ |
-| **Z** | `Disabled` | ☐ | ☐ |
-
-#### B. Options → Filter Setup
-Select the **Accela + Hamilton Filter** and set the parameters as follows:
-- **Rotation filtering (Yaw, Pitch, Roll):**
-  - **Smoothing:** `1.5°`
-  - **Deadzone:** `0.03°`
-- **Position filtering (X, Y, Z):**
-  - **Smoothing:** `1mm`
-  - **Deadzone:** `0.1mm`
-- **Rotation Smoothing (Zoomed):**
-  - **Max Added:** `0°`
-  - **Max Z:** `9.6mm`
+<img width="2560" height="1044" alt="RBR LookAhead Steering Controller v1 0 0 0" src="https://github.com/user-attachments/assets/f7ab919f-bef1-439b-b305-a78b015d4a19" />
 
 ---
 
