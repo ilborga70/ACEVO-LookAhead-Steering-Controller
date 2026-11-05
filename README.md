@@ -103,6 +103,8 @@ Don't worry — the code has been reviewed by IT experts and has been found to b
 
 🔗 **Check the full safety report here:** [Jotti's Malware Scan Report](https://virusscan.jotti.org/it-IT/filescanjob/g84ynyzizw)
 
+<img width="1033" height="1110" alt="1000092622" src="https://github.com/user-attachments/assets/fa043544-873b-4d13-9e02-669c9aa0b687" />
+
 ---
 
 ## 📜 Intellectual Property & Attribution Notice
