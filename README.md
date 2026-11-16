@@ -1,6 +1,6 @@
 # 🏎️ AC EVO LookAhead Steering Controller
 
-<img width="800" height="800" alt="1000092343" src="https://github.com/user-attachments/assets/6fc6eded-94d5-49a8-addd-4e978ecc64e5" />
+<img width="1393" height="746" alt="RBR LookAhead Steering Controller v1 1 0 0" src="https://github.com/user-attachments/assets/2b50d6a1-beb6-4d86-8bbf-44a6d8e5cfa7" />
 
 > **Universal Telemetric Camera Bridge for Assetto Corsa EVO (AC EVO)**  
 > *Developed by ilborga70*
