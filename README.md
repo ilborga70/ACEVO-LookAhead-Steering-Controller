@@ -43,18 +43,7 @@ A lightweight, high-frequency (60Hz UDP) telemetry bridge designed to simulate r
 
 ---
 
-## 🚀 Quick Installation (First Time Only)
-
-1. Download the mod's `.zip` archive.
-2. Extract **ALL** the contents of the ZIP directly into the game's root folder:
-   ```text
-   ...\SteamLibrary\steamapps\common\Assetto Corsa EVO\
-   ```
-   > 💡 **Note:** The manual build will add the mod (`LookAhead Steering Controller.exe`, `dinput8.dll`, and `AssettoCorsaEvoHeadTracking.asi`).
-
----
-
-## 🛠️ Step-by-Step Setup Guide Without Mod (`dinput8.dll` and `AssettoCorsaEvoHeadTracking.asi`)
+## 🛠️ Step-by-Step Setup Guide
 
 ### 0. Download & Install Prerequisites
 - Download and install **OpenTrack**:  
