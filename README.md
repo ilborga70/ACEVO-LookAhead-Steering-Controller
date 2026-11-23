@@ -1,4 +1,4 @@
-# 🏎️ AC EVO LookAhead Steering Controller
+# AC EVO LookAhead Steering Controller
 
 <img width="1393" height="746" alt="RBR LookAhead Steering Controller v1 1 0 0" src="https://github.com/user-attachments/assets/2b50d6a1-beb6-4d86-8bbf-44a6d8e5cfa7" />
 
